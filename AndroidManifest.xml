@@ -2538,5 +2538,12 @@
                 <action android:name="cyanogenmod.intent.action.WIFI_WAKEUP" />
             </intent-filter>
         </service>
+
+        <service android:label="LtoService"
+            android:enabled="true"
+            android:exported="false"
+            android:name=".cyanogenmod.LtoService">
+        </service>
+
     </application>
 </manifest>
