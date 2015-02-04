@@ -505,6 +505,8 @@
     <string name="dlg_reset_values_message">Reset values to default?</string>
     <string name="dlg_reset_android">Ok</string>
 
+    <string name="lock_screen_color_settings_summary">Customize colors</string>
+
     <!-- Privacy guard notification -->
     <string name="privacy_guard_notification_title">Notification</string>
     <string name="privacy_guard_notifiation_summary">Show a notification if privacy guard is active</string>
