@@ -5,7 +5,7 @@
     <!-- About phone screen, Temasek version -->
     <string name="temasek_version_title">Temasek unofficial version</string>
     <!-- Do NOT translate this -->
-   <string name="temasek_version_default">V9.9</string>
+    <string name="temasek_version_default">V9.9</string>
 
     <!-- temasek spare parts -->
     <string name="temasek_settings_title">Temasek spare parts</string>
@@ -671,6 +671,7 @@
     <string name="qs_tile_reboot">Reboot</string>
     <string name="qs_usb_tether_tile">USB Tethering</string>
     <string name="qs_navbar_tile">Navigation Bar</string>
+    <string name="qs_ambient_display_tile">Ambient display</string>
 
     <!-- Smart cover -->
     <string name="smart_cover_title">Smart cover</string>
