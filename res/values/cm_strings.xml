@@ -1269,4 +1269,6 @@
     <string name="dns_enc_server_summary">Select which server you want to use</string>
     <string name="dns_enc_resolver_label">DNS resolver:&#160;</string>
     <string name="dns_enc_resolvers_loading">Loading encrypted DNS resolver configuration...</string>
+
+    <string name="wifi_calling_settings_title">Wifi Calling Settings</string>
 </resources>
