@@ -118,6 +118,7 @@ import com.android.settings.print.PrintJobSettingsFragment;
 import com.android.settings.print.PrintSettingsFragment;
 import com.android.settings.sim.SimSettings;
 import com.android.settings.temasek.AmbientSettings;
+import com.android.settings.temasek.NavBarSettings;
 import com.android.settings.tts.TextToSpeechSettings;
 import com.android.settings.users.UserSettings;
 import com.android.settings.voice.VoiceInputSettings;
@@ -334,7 +335,8 @@ public class SettingsActivity extends Activity
             QSTiles.class.getName(),
             ExpandedDesktopPreferenceFragment.class.getName(),
             AmbientSettings.class.getName(),
-            DisplayRotation.class.getName()
+            DisplayRotation.class.getName(),
+            NavBarSettings.class.getName()
     };
 
 
@@ -1304,6 +1306,16 @@ public class SettingsActivity extends Activity
                     boolean supported = false;
                     try {
                         supported = (getPackageManager().getPackageInfo("com.vipercn.viper4android_v2", 0).versionCode >= 18);
+                    } catch (PackageManager.NameNotFoundException e) {
+                    }
+                    if (!supported) {
+                        removeTile = true;
+                    }
+                } else if (id == R.id.audiofx_settings) {
+                    // Embedding into Settings is supported
+                    boolean supported = false;
+                    try {
+                        supported = (getPackageManager().getPackageInfo("org.cyanogenmod.audiofx", 0).versionCode >= 1);
                     } catch (PackageManager.NameNotFoundException e) {
                     }
                     if (!supported) {
