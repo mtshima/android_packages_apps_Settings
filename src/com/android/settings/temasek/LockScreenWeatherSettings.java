@@ -275,7 +275,7 @@ public class LockScreenWeatherSettings extends SettingsPreferenceFragment implem
                     .setTitle(R.string.reset)
                     .setMessage(R.string.dlg_reset_values_message)
                     .setNegativeButton(R.string.cancel, null)
-                    .setNeutralButton(R.string.dlg_reset_android,
+                    .setPositiveButton(R.string.dlg_reset_android,
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Settings.System.putInt(getOwner().mResolver,
