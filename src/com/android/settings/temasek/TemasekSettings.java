@@ -22,18 +22,11 @@ public class TemasekSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.temasek_settings);
-
-        mHeadsUp = findPreference(KEY_HEADS_UP_SETTINGS);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-
-        boolean headsUpEnabled = Settings.System.getInt(
-                getContentResolver(), Settings.System.HEADS_UP_USER_ENABLED, Settings.System.HEADS_UP_USER_ON) != 0;
-        mHeadsUp.setSummary(headsUpEnabled
-                ? R.string.summary_heads_up_enabled : R.string.summary_heads_up_disabled);
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
