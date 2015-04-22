@@ -351,7 +351,7 @@
     <string name="restart_systemui">Restart SystemUI</string>
 
     <!-- Temasek lockscreen -->
-    <string name="temasek_lockscreen_title">Lock screen</string>
+    <string name="temasek_lockscreen_title">Extras</string>
     <string name="temasek_lockscreen_category">Lock screen settings</string>
     <string name="temasek_lockscreen_shortcuts_category">Shortcuts</string>
     <!-- CM lockscreen shortcuts -->

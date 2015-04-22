@@ -43,12 +43,6 @@
          android:fragment="com.android.settings.temasek.HeadsUpSettings"
          android:title="@string/category_heads_up" />
 
-    <!-- Lockscreen shortcuts -->
-    <PreferenceScreen
-         android:key="lockscreen_temasek"
-         android:fragment="com.android.settings.temasek.LockScreenSettings"
-         android:title="@string/temasek_lockscreen_title" />
-
     <!-- Recent panel settings -->
     <PreferenceScreen
          android:key="recents_panel"

@@ -62,6 +62,12 @@
             android:title="@string/owner_info_settings_title"
             android:summary="@string/owner_info_settings_summary"/>
 
+        <!-- Lockscreen shortcuts -->
+        <PreferenceScreen
+            android:key="lockscreen_temasek"
+            android:fragment="com.android.settings.temasek.LockScreenSettings"
+            android:title="@string/temasek_lockscreen_title" />
+
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
             android:key="lockscreen_visualizer"
             android:title="@string/lockscreen_visualizer_title"
