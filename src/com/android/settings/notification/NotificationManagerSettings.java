@@ -27,6 +27,8 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +44,10 @@ public class NotificationManagerSettings extends SettingsPreferenceFragment
     private int mLockscreenSelectedValue;
     private DropDownPreference mLockscreen;
 
+    private static final String KEY_HEADS_UP_SETTINGS = "heads_up_enabled";
+    
+    private Preference mHeadsUp;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -50,6 +56,16 @@ public class NotificationManagerSettings extends SettingsPreferenceFragment
         mSecure = new LockPatternUtils(getActivity()).isSecure();
         initLockscreenNotifications();
 
+        mHeadsUp = findPreference(KEY_HEADS_UP_SETTINGS);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        boolean headsUpEnabled = Settings.System.getInt(
+                getContentResolver(), Settings.System.HEADS_UP_USER_ENABLED, Settings.System.HEADS_UP_USER_ON) != 0;
+        mHeadsUp.setSummary(headsUpEnabled
+                ? R.string.summary_heads_up_enabled : R.string.summary_heads_up_disabled);
     }
 
     // === Lockscreen (public / private) notifications ===
