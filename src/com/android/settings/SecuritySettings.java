@@ -39,6 +39,7 @@ import android.content.pm.ResolveInfo;
 import android.content.pm.UserInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
 import android.os.ServiceManager;
 import android.os.UserHandle;
