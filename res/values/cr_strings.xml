@@ -119,6 +119,7 @@
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Removing every %1$s in the list will disable the second pie layer entirely.</string>
     <string name="shortcut_action_theme_switch">Theme switcher</string>
 
+
     <string name="shortcuts_applications">Applications</string>
     <string name="shortcuts_select_custom_app_title">Select custom application</string>
     <string name="shortcuts_icon_picker_type">Select icon type:</string>
@@ -595,10 +596,6 @@
     <string name="heads_up_time_out_8sec">8 seconds</string>
     <string name="heads_up_time_out_10sec">10 seconds</string>
     <string name="heads_up_time_out_never">Never</string>
-    <string name="heads_up_bg_color_title">Background color</string>
-    <string name="heads_up_text_color_title">Text color</string>
-    <string name="heads_up_colors_title">Custom Colors</string>
-    <string name="heads_up_colors_summary">Customize heads up text and background color</string>
 
     <!-- Heads up snooze -->
     <string name="heads_up_snooze_title">Snooze timer</string>
