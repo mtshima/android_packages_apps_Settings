@@ -546,6 +546,12 @@
     <string name="show_headsup_button_title">Show quick access button</string>
     <string name="show_headsup_button_summary">Show a quick access button in the status bar header</string>
 
+    <!-- Heads up timeout -->
+    <string name="heads_up_time_out_title">Time out</string>
+
+    <!-- Heads up snooze -->
+    <string name="heads_up_snooze_title">Snooze timer</string>
+
     <!-- Captive Portal -->
     <string name="captive_portal_detection">Captive portal detection</string>
     <string name="captive_portal_detection_summary">If disabled, a connection to google servers is not required in order to detect data connection.</string>
