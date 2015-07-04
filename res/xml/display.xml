@@ -161,6 +161,12 @@
                 android:summary="@string/summary_font_size"
                 android:dialogTitle="@string/dialog_title_font_size" />
 
+        <!-- Screen and animations -->
+        <PreferenceScreen
+                android:key="screen_and_animations"
+                android:fragment="com.android.settings.temasek.ScreenAndAnimations"
+                android:title="@string/screen_and_animations_title"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory
