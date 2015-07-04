@@ -1336,4 +1336,28 @@
     <string name="fingerprint_successful_scan_title_4">Just a few more times</string>
     <string name="fingerprint_successful_scan_title_5">You’re doing great! And again</string>
     <string name="fingerprint_successful_scan_title_6">Almost there</string>
+
+    <!-- DNS Encryption -->
+    <string name="dns_enc_title">DNS encryption</string>
+    <string name="dns_enc_summary">Manage DNS encryption settings</string>
+    <string name="dns_enc_switch_title">Enable DNS encryption</string>
+    <string name="dns_enc_switch_summary">Toggle execution of local DNS encryption service</string>
+    <string name="dns_enc_cat_config_title">Configuration</string>
+    <string name="dns_enc_server_title">DNS resolver list</string>
+    <string name="dns_enc_server_summary">Select which server you want to use</string>
+    <string name="dns_enc_resolver_label">DNS resolver:&#160;</string>
+    <string name="dns_enc_resolvers_loading">Loading encrypted DNS resolver configuration...</string>
+
+    <!-- Menu label for reset the battery stats -->
+    <string name="menu_stats_reset">Reset stats</string>
+    <!-- Reset stats confirmation dialog's message -->
+    <string name="reset_stats_msg">Battery history stats are going to be reset</string>
+
+    <!-- Dock battery not present message -->
+    <string name="dock_battery_not_present">Dock battery not present</string>
+
+    <!-- [CHAR_LIMIT=20] Battery use screen. Battery status shown in chart label when charging on Dock AC. -->
+    <string name="battery_info_status_charging_dock_ac">Charging on Dock AC</string>
+    <!-- [CHAR_LIMIT=20] Battery use screen. Battery status shown in chart label when charging over Dock USB. -->
+    <string name="battery_info_status_charging_dock_usb">Charging over Dock USB</string>
 </resources>
