@@ -128,14 +128,6 @@
             </intent>
         </dashboard-tile>
 
-        <!-- TRDS -->
-        <dashboard-tile
-                android:id="@+id/theme_settings"
-                android:icon="@drawable/ic_settings_theme"
-                android:fragment="com.android.settings.temasek.themes.ThemeSettings"
-                android:title="@string/theme_settings_title"
-                />
-
         <!-- Notification manager -->
         <dashboard-tile
                 android:id="@+id/notification_manager"
@@ -163,7 +155,7 @@
         <!-- Viper4Android -->
         <dashboard-tile
             android:id="@+id/viper_settings"
-            android:icon="@drawable/ic_settings_system"
+            android:icon="@drawable/ic_settings_viper"
             android:title="@string/viper_title">
             <intent
                 android:action="android.intent.action.MAIN"
@@ -385,7 +377,7 @@
         <!-- OTA Update -->
         <dashboard-tile
             android:id="@+id/ota_settings"
-            android:icon="@drawable/ic_settings_system"
+            android:icon="@drawable/ic_settings_viper"
             android:title="@string/ota_title">
             <intent
                 android:action="android.intent.action.MAIN"
