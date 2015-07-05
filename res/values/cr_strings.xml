@@ -758,10 +758,6 @@
     <string name="battery_saver_title">Warning color</string>
     <string name="battery_saver_style_reset_message">Reset battery saver warning color?</string>
 
-    <!-- Alarms and no interrupt zen mode -->
-    <string name="zen_mode_none_category">No interruptions</string>
-    <string name="zen_mode_alarms">Allow alarms</string>
-
     <!-- Text for forcing expanded notifications -->
     <string name="disable_fc_notifications_title">Disable FC Notifications</string>
     <string name="disable_fc_notifications_summary">This will hide all force close notifications</string>
@@ -1042,5 +1038,4 @@
     <!-- Floating Windows -->
     <string name="slim_action_floats">Slim Actions and Pie</string>
     <string name="slim_action_floats_summary">Launch Slim and Pie Actions in Floating Window Mode</string>
-
 </resources>
