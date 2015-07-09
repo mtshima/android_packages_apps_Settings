@@ -55,9 +55,6 @@
     <!-- SuperSU -->
     <string name="supersu_title">SuperSU</string>
 
-    <!-- OTA update -->
-    <string name="ota_title">OTA update</string>
-
     <!-- long press back to kill configurable timeout -->
     <string name="kill_app_longpress_timeout_title">Long press timeout</string>
     <string name="timeout_2000">2 seconds (default)</string>
