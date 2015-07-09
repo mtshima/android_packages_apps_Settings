@@ -350,30 +350,6 @@ public class LockScreenWeatherSettings extends SettingsPreferenceFragment implem
                             getOwner().refreshSettings();
                         }
                     })
-                    .setPositiveButton(R.string.dlg_reset_bliss,
-                        new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.LOCK_SCREEN_SHOW_WEATHER, 1);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.LOCK_SCREEN_SHOW_WEATHER_LOCATION, 1);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.LOCK_SCREEN_SHOW_WEATHER_TIMESTAMP, 1);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.LOCK_SCREEN_WEATHER_TEXT_COLOR,
-                                    DEFAULT_COLOR);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.LOCK_SCREEN_WEATHER_ICON_COLOR,
-                                    DEFAULT_COLOR);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.LOCK_SCREEN_WEATHER_COLORIZE_ALL_ICONS, 1);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.LOCK_SCREEN_WEATHER_HIDE_PANEL, 0);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.LOCK_SCREEN_WEATHER_NUMBER_OF_NOTIFICATIONS, 6);
-                            getOwner().refreshSettings();
-                        }
-                    })
                     .create();
             }
             throw new IllegalArgumentException("unknown id " + id);
