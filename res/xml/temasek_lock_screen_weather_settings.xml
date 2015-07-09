@@ -58,6 +58,8 @@
             android:defaultValue="0xffffffff" />
 
 	</PreferenceCategory>
+
+	<PreferenceCategory
         android:key="weather_cat_notifications"
         android:title="@string/weather_cat_notifications_title">
 
