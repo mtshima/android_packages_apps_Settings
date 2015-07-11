@@ -79,12 +79,12 @@
             android:title="@string/owner_info_settings_title"
             android:summary="@string/owner_info_settings_summary"/>
 
-        <!-- Lockscreen shortcuts -->
         <PreferenceScreen
             android:key="lockscreen_temasek"
             android:fragment="com.android.settings.temasek.LockScreenSettings"
             android:title="@string/temasek_lockscreen_title" />
 
+        <!-- Lockscreen shortcuts -->
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="double_tap_sleep_anywhere"
             android:title="@string/double_tap_sleep_anywhere_title"

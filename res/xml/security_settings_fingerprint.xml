@@ -35,6 +35,28 @@
             android:summary="@string/fingerprint_manage_fingerprints_summary"
             android:persistent="false"/>
 
+        <SwitchPreference
+            android:key="directlyshow"
+            android:persistent="false"
+            android:title="@string/lock_directly_show_password"/>
+
+        <ListPreference
+            android:key="lock_after_timeout"
+            android:title="@string/lock_after_timeout"
+            android:summary="@string/lock_after_timeout_summary"
+            android:entries="@array/lock_after_timeout_entries"
+            android:entryValues="@array/lock_after_timeout_values"
+            android:persistent="false"/>
+
+        <SwitchPreference
+            android:key="power_button_instantly_locks"
+            android:title="@string/lockpattern_settings_enable_power_button_instantly_locks"/>
+
+        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
+            android:key="long_press_lock_icon_to_sleep"
+            android:title="@string/longpress_lock_icon_to_sleep_title"
+            android:summary="@string/longpress_lock_icon_to_sleep_summary" />
+
         <Preference android:key="manage_trust_agents"
                     android:title="@string/manage_trust_agents"
                     android:summary="@string/manage_trust_agents_summary"
@@ -52,6 +74,11 @@
             android:fragment="com.android.settings.OwnerInfoSettings"
             android:title="@string/owner_info_settings_title"
             android:summary="@string/owner_info_settings_summary"/>
+
+        <PreferenceScreen
+            android:key="lockscreen_temasek"
+            android:fragment="com.android.settings.temasek.LockScreenSettings"
+            android:title="@string/temasek_lockscreen_title" />
 
         <PreferenceScreen
             android:key="lockscreen_shortcuts_settings"
