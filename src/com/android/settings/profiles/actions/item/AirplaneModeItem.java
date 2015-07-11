@@ -15,7 +15,8 @@
  */
 package com.android.settings.profiles.actions.item;
 
-import cyanogenmod.app.AirplaneModeSettings;
+import android.app.AirplaneModeSettings;
+import android.app.RingModeSettings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

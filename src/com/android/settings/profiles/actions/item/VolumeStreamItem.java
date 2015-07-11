@@ -15,7 +15,7 @@
  */
 package com.android.settings.profiles.actions.item;
 
-import cyanogenmod.app.StreamSettings;
+import android.app.StreamSettings;
 import android.content.Context;
 import android.media.AudioManager;
 import android.view.LayoutInflater;
