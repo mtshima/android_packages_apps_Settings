@@ -75,6 +75,7 @@ public class LockScreenWeatherSettings extends SettingsPreferenceFragment implem
     private SwitchPreference mShowLocation;
     private SwitchPreference mShowTimestamp;
     private ListPreference mConditionIcon;
+    private SwitchPreference mColorizeAllIcons;
     private ColorPickerPreference mTextColor;
     private ColorPickerPreference mIconColor;
     private SwitchPreference mColorizeAllIcons;
