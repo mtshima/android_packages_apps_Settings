@@ -78,7 +78,6 @@ public class LockScreenWeatherSettings extends SettingsPreferenceFragment implem
     private SwitchPreference mColorizeAllIcons;
     private ColorPickerPreference mTextColor;
     private ColorPickerPreference mIconColor;
-    private SwitchPreference mColorizeAllIcons;
     private ListPreference mHideWeather;
     private ListPreference mNumberOfNotifications;
 
