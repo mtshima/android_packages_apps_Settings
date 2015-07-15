@@ -37,7 +37,7 @@ public class ProtectedAppsActivity extends Activity {
     private static final int REQ_ENTER_PATTERN = 1;
     private static final int REQ_RESET_PATTERN = 2;
 
-    private static final String needsUnlock = "NEEDS_UNLOCK";
+    private static final String NEEDS_UNLOCK = "needs_unlock";
 
     private ListView mListView;
 
@@ -72,7 +72,7 @@ public class ProtectedAppsActivity extends Activity {
         mProtect = new ArrayList<ComponentName>();
 
         if (savedInstanceState != null) {
-            mUserIsAuth = savedInstanceState.getBoolean(needsUnlock);
+            mUserIsAuth = savedInstanceState.getBoolean(NEEDS_UNLOCK);
         }
 
         if (!mUserIsAuth) {
@@ -85,7 +85,7 @@ public class ProtectedAppsActivity extends Activity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putBoolean(needsUnlock, mUserIsAuth);
+        outState.putBoolean(NEEDS_UNLOCK, mUserIsAuth);
     }
 
     @Override
