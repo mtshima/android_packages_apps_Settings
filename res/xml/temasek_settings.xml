@@ -31,6 +31,12 @@
          android:fragment="com.android.settings.temasek.AppSidebar"
          android:title="@string/app_sidebar_title"/>
 
+    <!-- Clock widget -->
+    <PreferenceScreen
+         android:key="lock_clock"
+         android:fragment="com.android.settings.temasek.LockClock"
+         android:title="@string/lock_clock_title" />
+
     <!-- Gesture anywhere -->
     <PreferenceScreen
          android:key="gesture_anywhere"
