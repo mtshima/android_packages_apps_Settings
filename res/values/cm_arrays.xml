@@ -532,6 +532,7 @@
         <item>SG</item>
         <item>BR</item>
         <item>IN</item>
+    </string-array>
 
     <string-array name="keep_screen_on_titles" translatable="false">
         <item>@string/keep_screen_on_never</item>
