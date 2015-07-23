@@ -57,15 +57,6 @@
             android:entryValues="@array/lock_after_timeout_values"
             android:persistent="false"/>
 
-        <SwitchPreference
-            android:key="power_button_instantly_locks"
-            android:title="@string/lockpattern_settings_enable_power_button_instantly_locks"/>
-
-        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
-            android:key="long_press_lock_icon_to_sleep"
-            android:title="@string/longpress_lock_icon_to_sleep_title"
-            android:summary="@string/longpress_lock_icon_to_sleep_summary" />
-
         <Preference android:key="manage_trust_agents"
                     android:title="@string/manage_trust_agents"
                     android:summary="@string/manage_trust_agents_summary"
@@ -77,6 +68,15 @@
     <PreferenceCategory
         android:key="general_category"
         android:title="@string/title_general">
+
+        <SwitchPreference
+            android:key="power_button_instantly_locks"
+            android:title="@string/lockpattern_settings_enable_power_button_instantly_locks"/>
+
+        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
+            android:key="long_press_lock_icon_to_sleep"
+            android:title="@string/longpress_lock_icon_to_sleep_title"
+            android:summary="@string/longpress_lock_icon_to_sleep_summary" />
 
         <PreferenceScreen
             android:key="owner_info_settings"
