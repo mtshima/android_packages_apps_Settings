@@ -138,6 +138,11 @@
             android:fragment="com.android.settings.temasek.BreathingNotifications"
             android:title="@string/breathing_notifications_title" />
 
+        <PreferenceScreen
+            android:key="status_bar_temperature_style"
+            android:title="@string/status_bar_temperature_title"
+            android:fragment="com.android.settings.temasek.StatusBarWeather" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
