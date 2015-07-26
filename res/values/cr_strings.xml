@@ -585,7 +585,7 @@
 
     <!-- Heads Up Floating Mode -->
     <string name="heads_up_floating_window_title">Float mode</string>
-    <string name="heads_up_floating_window_summary">Longpress and release to open in float mode when not on home screen</string> 
+    <string name="heads_up_floating_window_summary">Long press and release to open in float mode when not on home screen</string> 
 
     <!-- Captive Portal -->
     <string name="captive_portal_detection">Captive portal detection</string>
