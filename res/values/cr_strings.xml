@@ -58,9 +58,9 @@
     <!-- long press back to kill configurable timeout -->
     <string name="kill_app_longpress_timeout_title">Long press timeout</string>
     <string name="timeout_2000">2 seconds (default)</string>
-    <string name="timeout_1500">1,5 seconds</string>
+    <string name="timeout_1500">1.5 seconds</string>
     <string name="timeout_1000">1 second</string>
-    <string name="timeout_500">0,5 second</string>
+    <string name="timeout_500">0.5 second</string>
 
     <!-- Slim Shortcuts -->
     <string name="slim_shortcut_picker">Slim Actions</string>
