@@ -5,7 +5,7 @@
     <!-- About phone screen, Temasek version -->
     <string name="temasek_version_title">Temasek unofficial version</string>
     <!-- Do NOT translate this -->
-    <string name="temasek_version_default">v15.11</string>
+    <string name="temasek_version_default">v15.2</string>
 
     <!-- temasek spare parts -->
     <string name="temasek_settings_title">Spare parts</string>
@@ -587,10 +587,6 @@
     <!-- Heads Up Floating Mode -->
     <string name="heads_up_floating_window_title">Float mode</string>
     <string name="heads_up_floating_window_summary">Long press and release to open in float mode when not on home screen</string> 
-
-    <!-- Captive Portal -->
-    <string name="captive_portal_detection">Captive portal detection</string>
-    <string name="captive_portal_detection_summary">If disabled, a connection to google servers is not required in order to detect data connection.</string>
 
     <!-- Navring targets (enable/disable) -->
     <string name="navigation_ring_enable_title">Enable navigation rings</string>
