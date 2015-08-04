@@ -204,6 +204,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_heads_up_on";
                 stringId = R.string.qs_tile_heads_up;
                 break;
+            case QSConstants.TILE_TRDS:
+                resourceName = "ic_qs_trds_on";
+                stringId = R.string.qs_tile_trds;
+                break;
             case QSConstants.TILE_SYSTEMUI_RESTART:
                 resourceName = "ic_qs_systemui_restart";
                 stringId = R.string.qs_systemui_restart_tile;
