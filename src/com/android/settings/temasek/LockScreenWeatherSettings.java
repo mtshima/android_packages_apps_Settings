@@ -344,6 +344,12 @@ public class LockScreenWeatherSettings extends SettingsPreferenceFragment implem
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.LOCK_SCREEN_WEATHER_COLORIZE_ALL_ICONS, 0);
                             Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.LOCK_SCREEN_WEATHER_TEXT_COLOR,
+                                    DEFAULT_COLOR);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.LOCK_SCREEN_WEATHER_ICON_COLOR,
+                                    DEFAULT_COLOR);
+                            Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.LOCK_SCREEN_WEATHER_HIDE_PANEL, 0);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.LOCK_SCREEN_WEATHER_NUMBER_OF_NOTIFICATIONS, 6);

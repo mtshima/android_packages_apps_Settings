@@ -541,7 +541,7 @@
         <item>4</item>
         <item>5</item>
         <item>6</item>
-    </string-array> 
+    </string-array>
 
     <string-array name="clock_date_position_entries">
         <item>@string/position_right_title</item>
