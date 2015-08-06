@@ -630,7 +630,7 @@
 
     <!-- Doze pulse (ambient display) options -->
     <string-array name="doze_pulse_duration_in_entries" translatable="false">
-    	<item>@string/zero_second</item>
+        <item>@string/zero_second</item>
         <item>@string/twohundred_ms</item>
         <item>@string/fivehundred_ms</item>
         <item>@string/one_second_default</item>
@@ -639,7 +639,7 @@
     </string-array>
 
     <string-array name="doze_pulse_duration_in_values" translatable="false">
-    	<item>0</item>
+        <item>0</item>
         <item>200</item>
         <item>500</item>
         <item>1000</item>
@@ -648,7 +648,7 @@
     </string-array>
 
     <string-array name="doze_pulse_duration_visible_entries" translatable="false">
-    	<item>@string/zero_second</item>
+        <item>@string/zero_second</item>
         <item>@string/one_second</item>
         <item>@string/onehalf_second</item>
         <item>@string/two_second</item>
@@ -661,7 +661,7 @@
     </string-array>
 
     <string-array name="doze_pulse_duration_visible_values" translatable="false">
-    	<item>0</item>
+        <item>0</item>
         <item>1000</item>
         <item>1500</item>
         <item>2000</item>
