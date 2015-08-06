@@ -241,7 +241,7 @@ public class QSColors extends SettingsPreferenceFragment implements
                     .setTitle(R.string.reset)
                     .setMessage(R.string.reset_message)
                     .setNegativeButton(R.string.cancel, null)
-                    .setNeutralButton(R.string.reset_android,
+                    .setPositiveButton(R.string.dlg_reset_android,
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Settings.System.putInt(getOwner().mResolver,
@@ -256,26 +256,6 @@ public class QSColors extends SettingsPreferenceFragment implements
                              Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_EXPANDED_HEADER_BG_COLOR,
                                     DEFAULT_BG_COLOR);
-                            getOwner().refreshSettings();
-                        }
-                    })
-                    .setPositiveButton(R.string.reset_swag,
-                        new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.QS_BACKGROUND_COLOR,
-                                    WHITE);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.QS_ICON_COLOR,
-                                    SWAG_TEAL);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.QS_TEXT_COLOR,
-                                    SWAG_TEAL);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.QS_TRANSPARENT_SHADE, 0);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_BG_COLOR,
-                                    0xee263238);
                             getOwner().refreshSettings();
                         }
                     })

@@ -556,8 +556,6 @@
     <string name="icon_title">Icon</string>
     <string name="qs_colors_title">Quick Settings Color Options</string>
     <string name="qs_colors_summary">Change background, icon and text colors for the tiles</string>
-    <string name="reset_android">Android</string>
-    <string name="reset_swag">Swag</string>
     <string name="colors_title">Colors</string>
     <string name="cat_colors_title">Customize notification colors</string>
     <string name="text_title">Text</string>
