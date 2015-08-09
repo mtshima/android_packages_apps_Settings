@@ -26,8 +26,6 @@
     <string name="extras_temasek_settings">Extras</string>
     <string name="reset_default_message">Reset default</string>
     <string name="additional_options_title">Additional options</string>
-    <string name="dlg_reset_dark">Dark</string>
-    <string name="dlg_reset_light">Light</string>
 
     <!-- Changelog -->
     <string name="changelog_temasek_title">Changelog</string>
