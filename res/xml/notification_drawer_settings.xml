@@ -84,15 +84,15 @@
             android:defaultValue="true"/>
 
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
+            android:key="qs_show_volume_slider"
+            android:title="@string/qs_volume_slider_title"
+            android:defaultValue="false"/>
+
+        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
             android:key="qs_wifi_detail"
             android:title="@string/qs_wifi_detail_title"
             android:summary="@string/qs_wifi_detail_summary"
             android:defaultValue="false" />
-
-        <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
-            android:key="qs_show_volume_slider"
-            android:title="@string/qs_volume_slider_title"
-            android:defaultValue="false"/>
 
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
             android:key="qs_location_advanced"
