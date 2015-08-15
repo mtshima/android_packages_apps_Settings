@@ -22,6 +22,13 @@
          android:fragment="com.android.settings.temasek.HeadsUpSettings"
          android:title="@string/category_heads_up" />
 
+    <!-- Zen Mode -->
+    <PreferenceScreen
+            android:key="zen_mode"
+            android:title="@string/zen_mode_settings_title"
+            android:summary="@string/zen_mode_settings_summary"
+            android:fragment="com.android.settings.notification.ZenModeSettings" />
+
     <!-- When device is locked -->
     <com.android.settings.notification.DropDownPreference
             android:key="lock_screen_notifications"

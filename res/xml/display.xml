@@ -50,6 +50,31 @@
                 android:summary="@string/live_display_summary"
                 android:fragment="com.android.settings.livedisplay.LiveDisplay" />
 
+        <!-- Rotation modes -->
+        <PreferenceScreen
+                android:key="display_rotation"
+                android:title="@string/display_rotation_title"
+                android:fragment="com.android.settings.cyanogenmod.DisplayRotation"
+                settings:advanced="true"/>
+
+        <!-- Auto rotate screen -->
+        <SwitchPreference
+                android:key="accelerometer"
+                android:title="@string/accelerometer_title"
+                settings:advanced="false"/>
+
+        <!-- Cast screen -->
+        <PreferenceScreen
+                android:key="wifi_display"
+                android:title="@string/wifi_display_settings_title"
+                settings:keywords="@string/keywords_display_cast_screen"
+                android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="displaywakeup"
+        android:title="@string/displaywakeup_label">
+
         <!-- Doze // Ambient display advanced -->
         <PreferenceScreen
                 android:key="doze_fragment"
@@ -77,13 +102,6 @@
                 android:title="@string/double_tap_to_wake_title"
                 android:summary="@string/double_tap_to_wake_summary" />
 
-        <!-- Double tap to sleep -->
-        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-                android:key="double_tap_sleep_gesture"
-                android:title="@string/double_tap_to_sleep_title"
-                android:summary="@string/double_tap_to_sleep_summary"
-                android:defaultValue="true" />
-
         <!-- Prevent accidental wake-up -->
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
                 android:key="proximity_on_wake"
@@ -92,18 +110,13 @@
                 android:defaultValue="true"
                 settings:advanced="true"/>
 
-        <!-- Rotation modes -->
-        <PreferenceScreen
-                android:key="display_rotation"
-                android:title="@string/display_rotation_title"
-                android:fragment="com.android.settings.cyanogenmod.DisplayRotation"
-                settings:advanced="true"/>
-
-        <!-- Auto rotate screen -->
+        <!-- Wake on plug -->
         <SwitchPreference
-                android:key="accelerometer"
-                android:title="@string/accelerometer_title"
-                settings:advanced="false"/>
+                android:key="wake_when_plugged_or_unplugged"
+                android:title="@string/wake_when_plugged_or_unplugged_title"
+                android:summary="@string/wake_when_plugged_or_unplugged_summary"
+                android:defaultValue="false"
+                settings:advanced="true"/>
 
         <!-- Seconds before sleep -->
         <ListPreference
@@ -114,14 +127,20 @@
                 android:entries="@array/screen_timeout_entries"
                 android:entryValues="@array/screen_timeout_values" />
 
-        <!-- Wake on plug -->
-        <SwitchPreference
-                android:key="wake_when_plugged_or_unplugged"
-                android:title="@string/wake_when_plugged_or_unplugged_title"
-                android:summary="@string/wake_when_plugged_or_unplugged_summary"
-                android:defaultValue="false"
-                settings:advanced="true"/>
+        <!-- Double tap to sleep -->
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+                android:key="double_tap_sleep_gesture"
+                android:title="@string/double_tap_to_sleep_title"
+                android:summary="@string/double_tap_to_sleep_summary"
+                android:defaultValue="true" />
 
+   </PreferenceCategory>
+
+    <PreferenceCategory
+            android:key="interface"
+            android:title="@string/category_interface">
+
+        <!-- lcd density -->
         <EditTextPreference
                 android:key="lcd_density"
                 android:title="@string/lcd_density"
@@ -129,17 +148,6 @@
                 android:persistent="false"
                 settings:advanced="true" />
 
-        <!-- Cast screen -->
-        <PreferenceScreen
-                android:key="wifi_display"
-                android:title="@string/wifi_display_settings_title"
-                settings:keywords="@string/keywords_display_cast_screen"
-                android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-            android:key="interface"
-            android:title="@string/category_interface">
         <!-- expanded desktop -->
         <PreferenceScreen
                 android:key="expanded_desktop"
