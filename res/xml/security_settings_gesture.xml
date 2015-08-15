@@ -32,6 +32,11 @@
             android:key="visiblegesture"
             android:title="@string/lockgesture_settings_enable_visible_pattern_title"/>
 
+        <SwitchPreference
+            android:key="directlyshow"
+            android:persistent="false"
+            android:title="@string/lock_directly_show_gesture"/>
+
         <ListPreference
             android:key="lock_after_timeout"
             android:title="@string/lock_after_timeout"

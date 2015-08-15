@@ -960,8 +960,12 @@
     <string name="lockpattern_settings_enable_dots_title">Show pattern dots</string>
     <!-- Whether the keyguard will directly pass to pattern view -->
     <string name="lock_directly_show_pattern">Directly show pattern view</string>
+    <!-- Whether the keyguard will directly pass to gesture view -->
+    <string name="lock_directly_show_gesture">Directly show gesture view</string>
     <!-- Whether the keyguard will directly pass to password enter -->
-    <string name="lock_directly_show_password">Bypass lock screen swipe up</string>
+    <string name="lock_directly_show_password">Directly show password input</string>
+    <!-- Whether the keyguard will directly pass to PIN enter -->
+    <string name="lock_directly_show_pin">Directly show PIN input</string>
 
     <!-- Screen security -->
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
