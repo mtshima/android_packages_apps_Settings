@@ -108,8 +108,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private static final String CLEAR_ADB_KEYS = "clear_adb_keys";
     private static final String ENABLE_TERMINAL = "enable_terminal";
     private static final String RESTART_SYSTEMUI = "restart_systemui";
-    private static final String KEEP_SCREEN_ON_OLD = "keep_screen_on";
-    private static final String KEEP_SCREEN_ON = "keep_screen_on_list";
+    private static final String KEEP_SCREEN_ON = "keep_screen_on";
     private static final String BT_HCI_SNOOP_LOG = "bt_hci_snoop_log";
     private static final String ENABLE_OEM_UNLOCK = "oem_unlock_enable";
     private static final String ALLOW_MOCK_LOCATION = "allow_mock_location";
@@ -220,7 +219,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private Preference mClearAdbKeys;
     private SwitchPreference mEnableTerminal;
     private Preference mRestartSystemUI;
-    private ListPreference mKeepScreenOn;
+    private SwitchPreference mKeepScreenOn;
     private SwitchPreference mBtHciSnoopLog;
     private SwitchPreference mEnableOemUnlock;
     private SwitchPreference mAllowMockLocation;
@@ -319,15 +318,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             return;
         }
 
-        // Handle migration of the KEEP_SCREEN_ON value to its new list key
-        if (Settings.Global.getInt(getActivity().getContentResolver(),
-                    Settings.Global.STAY_ON_WHILE_PLUGGED_IN_OLD, 0) == 1) {
-            // User had this set to always
-            int always = 2;
-            Object newVal = (Integer) always;
-            writeStayAwakeOptions(newVal);
-        }
-
         addPreferencesFromResource(R.xml.development_prefs);
 
         mShowUnacAndOvercounted = findAndInitSwitchPref(SHOW_UNAC_AND_OVERCOUNTED_STATS);
@@ -353,7 +343,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         }
 
         mRestartSystemUI = findPreference(RESTART_SYSTEMUI);
-        mKeepScreenOn = addListPreference(KEEP_SCREEN_ON);
+
+        mKeepScreenOn = findAndInitSwitchPref(KEEP_SCREEN_ON);
         mBtHciSnoopLog = findAndInitSwitchPref(BT_HCI_SNOOP_LOG);
         mEnableOemUnlock = findAndInitSwitchPref(ENABLE_OEM_UNLOCK);
         if (!showEnableOemUnlockPreference()) {
@@ -625,7 +616,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                     context.getPackageManager().getApplicationEnabledSetting(TERMINAL_APP_PACKAGE)
                             == PackageManager.COMPONENT_ENABLED_STATE_ENABLED);
         }
-        updateStayAwakeOptions();
+        updateSwitchPreference(mKeepScreenOn, Settings.Global.getInt(cr,
+                Settings.Global.STAY_ON_WHILE_PLUGGED_IN, 0) != 0);
         updateSwitchPreference(mBtHciSnoopLog, Settings.Secure.getInt(cr,
                 Settings.Secure.BLUETOOTH_HCI_LOG, 0) != 0);
         if (mEnableOemUnlock != null) {
@@ -807,23 +799,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private void resetAdbNotifyOptions() {
         Settings.Secure.putInt(getActivity().getContentResolver(),
                 Settings.Secure.ADB_NOTIFY, 1);
-    }
-
-    private void updateStayAwakeOptions() {
-        int value = Settings.Global.getInt(getActivity().getContentResolver(),
-                Settings.Global.STAY_ON_WHILE_PLUGGED_IN, 0);
-        String[] values = getResources().getStringArray(R.array.keep_screen_on_values);
-        String[] summaries = getResources().getStringArray(R.array.keep_screen_on_titles);
-        int index = 0; // Defaults to never. Needs to match with R.array.keep_screen_on_values
-        for (int i = 0; i < values.length; i++) {
-            if (value == Integer.valueOf(values[i])) {
-                index = i;
-                break;
-            }
-        }
-        mKeepScreenOn.setValue(values[index]);
-        mKeepScreenOn.setSummary(summaries[index]);
-        mKeepScreenOn.setOnPreferenceChangeListener(this);
     }
 
     private void updateHdcpValues() {
@@ -1153,13 +1128,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         }
         mShowNonRectClip.setValueIndex(0);
         mShowNonRectClip.setSummary(mShowNonRectClip.getEntries()[0]);
-    }
-
-    private void writeStayAwakeOptions(Object newValue) {
-        int val = Integer.parseInt((String) newValue);
-        Settings.Global.putInt(getActivity().getContentResolver(),
-                    Settings.Global.STAY_ON_WHILE_PLUGGED_IN, val);
-        updateStayAwakeOptions();
     }
 
     private void writeShowNonRectClipOptions(Object newValue) {
@@ -1732,6 +1700,11 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             pm.setApplicationEnabledSetting(TERMINAL_APP_PACKAGE,
                     mEnableTerminal.isChecked() ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED
                             : PackageManager.COMPONENT_ENABLED_STATE_DEFAULT, 0);
+        } else if (preference == mKeepScreenOn) {
+            Settings.Global.putInt(getActivity().getContentResolver(),
+                    Settings.Global.STAY_ON_WHILE_PLUGGED_IN,
+                    mKeepScreenOn.isChecked() ?
+                            (BatteryManager.BATTERY_PLUGGED_AC | BatteryManager.BATTERY_PLUGGED_USB) : 0);
         } else if (preference == mBtHciSnoopLog) {
             writeBtHciSnoopLogOptions();
         } else if (preference == mEnableOemUnlock) {
@@ -1883,9 +1856,6 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             } else {
                 writeRootAccessOptions(newValue);
             }
-            return true;
-        } else if (preference == mKeepScreenOn) {
-            writeStayAwakeOptions(newValue);
             return true;
         }
         return false;
