@@ -8,7 +8,7 @@
     <!-- temasek spare parts -->
     <string name="temasek_settings_title">Настройки от Temasek</string>
     <string name="recents_panel_title">Недавние приложения</string>
-    <string name="recents_panel_settings">Настройки \"Недавних приложений\"</string>
+    <string name="recents_panel_settings">Настройки недавних приложений</string>
     <string name="screen_and_animations_title">Экран и анимация</string>
     <string name="display_settings">Экран</string>
     <string name="display_settings_title">Настройки экрана</string>
@@ -43,7 +43,7 @@
 
     <!-- About device screen, CPU and RAM info. -->
     <string name="cpu_info">Процессор</string>
-    <string name="mem_info">ОЗУ</string>
+    <string name="mem_info">Память</string>
 
     <!-- Temasek Extra Info -->
     <string name="temaextrainfo">Доп. информация</string>
@@ -563,13 +563,15 @@
     <!-- QuickSettings colors -->
     <string name="background_title">Фон</string>
     <string name="icon_title">Иконка</string>
-    <string name="qs_colors_title">Настройка цвета</string>
+    <string name="qs_colors_title">Цвет быстрых настроек</string>
+    <string name="qs_colors_summary">Возможность изменить фон, цвет иконок и текста плиток быстрых настроек</string>
     <string name="reset_android">Android</string>
     <string name="reset_swag">Swag</string>
     <string name="colors_title">Цвета</string>
+    <string name="cat_colors_title">Настроки цвета уведомлений</string>
     <string name="text_title">Текст</string>
     <string name="qs_transparent_shade_title">Прозрачность</string>
-    <string name="qs_transparent_shade_summary">Возможность делать панель прозрачной.</string>
+    <string name="qs_transparent_shade_summary">Возможность делать панель прозрачной</string>
     <string name="qs_color_switch_title">Переключить пользовательский цвет</string>
 
     <!-- Heads Up -->
@@ -946,6 +948,8 @@
     <!-- TRDS 5.0 -->	
     <string name="theme_settings_title">TRDS</string>
     <string name="theme_auto_mode_title">Переключить тему</string>
+    <string name="theme_override_custom_colors_title">Переопределять пользов. цвета</string>
+    <string name="theme_override_custom_colors_summary">Переопределяет пользов. цвета для панели уведомлений и быстрых настроек</string>
     <string name="theme_auto_mode_off">Вручную</string>
     <string name="theme_auto_mode_lightsensor">При изменении освещенности</string>
     <string name="theme_auto_mode_twilight">В дневное время</string>
@@ -1121,14 +1125,10 @@
     <string name="dim_nav_buttons_touch_anywhere_title">Учитывать касания со всего экрана</string>
     <string name="dim_nav_buttons_touch_anywhere_summary_on">Прикосновение к любой части экрана зажжет кнопки обратно</string>
     <string name="dim_nav_buttons_touch_anywhere_summary_off">Только прикосновение к панели навигации зажигает кнопки</string>
-
-    <!-- Lockscreen wallpaper -->
-    <string name="lockscreen_wallpaper_title">Обои</string>
-    <string name="lockscreen_wallpaper_summary">Задать обои экрана блокировки</string>
     
     <!-- Status bar temperature -->
     <string name="status_bar_temperature_title">Температура</string>
-    <string name="status_bar_temperature_hidden">Скрыто</string>
+    <string name="status_bar_temperature_hidden">Скрыть</string>
     <string name="status_bar_temperature_show_scale">Показывать со шкалой измерения</string>
     <string name="status_bar_temperature_hide_scale">Показывать без шкалы измерения</string>
     <string name="status_bar_temperature_location_title">Положение</string>
@@ -1141,5 +1141,36 @@
     <!-- Headphones icon switch -->
     <string name="show_headset_icon_title">Значок гарнитуры</string>
     <string name="show_headset_icon_summary">Показывать значок, когда гарнитура подключена</string>
+
+    <!-- Notification color settings -->
+    <string name="notification_color_settings_title">Настройки цвета уведомлений</string>
+    <string name="notification_media_bg_mode_title">Цвет медиа в фоне</string>
+    <string name="notification_app_icon_bg_mode_title">Цвет иконки приложения в фоне</string>
+    <string name="notification_app_icon_color_mode_title">Цвет иконки приложения</string>
+    <string name="notification_bg_guts_color_title">Цвет фона при долгом нажатии</string>
+    <string name="notification_app_icon_bg_color_title">Цвет фона иконки приложения</string>
+    <string name="notification_color_mode_never_title">Никогда</string>
+    <string name="notification_icon_color_mode_greyscale_title">Если значок содержит оттенки серого</string>
+    <string name="notification_bg_color_mode_no_color_title">Если уведомление не содержит собственного цвета</string>
+    <string name="notification_color_mode_always_title">Всегда</string>
+    
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Свайп тремя пальцами</string>
+    <string name="three_finger_gesture_summary">Свайп тремя пальцами, чтобы сделать скриншот</string>
+    
+    <!-- Scrolling Cache -->
+    <string name="pref_scrollingcache_title">Кэш прокрутки</string>
+    <string name="pref_scrollingcache_summary">Кэш прокрутки может повысить плавность за счёт использования ОЗУ</string>
+    <string name="pref_scrollingcache_force_enable">Принудительно включить</string>
+    <string name="pref_scrollingcache_default_enable">Включить по умолчанию</string>
+    <string name="pref_scrollingcache_default_disable">Отключить по умолчанию</string>
+    <string name="pref_scrollingcache_force_disable">Принудительно отключить</string>
+
+    <!-- Lockscreen wallpaper -->
+    <string name="lockscreen_wallpaper_title">Обои</string>
+    <string name="lockscreen_wallpaper_summary">Задать обои экрана блокировки</string>
+    <string name="lockscreen_wallpaper_set_title">Задать обои экрана блокировки</string>
+    <string name="lockscreen_wallpaper_clear_title">Убрать обои экрана блокировки</string>
+    <string name="reset_lockscreen_wallpaper">Вернуть значения по умолчанию</string>
 
 </resources>
