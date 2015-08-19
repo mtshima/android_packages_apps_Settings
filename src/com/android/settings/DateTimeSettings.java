@@ -385,8 +385,8 @@ public class DateTimeSettings extends SettingsPreferenceFragment
         // If a device was boot up with date 1970 and then date changes to some later time,
         // the wrong string might be cached if the country's zones have changed.
         // See external/icu/icu4c/source/data/misc/metaZones.txt for complete mapping
+        TimeZoneNames.clearLocaleCache();
         Locale locale = Locale.getDefault();
-        TimeZoneNames.clearLocaleCache(locale);
         DateFormatSymbols.getInstance(locale).setZoneStrings(TimeZoneNames.getZoneStrings(locale));
     }
 

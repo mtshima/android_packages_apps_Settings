@@ -1384,6 +1384,11 @@
     <string name="lto_download_data_wifi_only_on">Over any networks</string>
     <string name="lto_download_data_wifi_only_off">Only over Wi\u2011Fi networks</string>
 
+    <!-- Keep screen on strings -->
+    <string name="keep_screen_on_never">Never</string>
+    <string name="keep_screen_on_debugging">While USB debugging</string>
+    <string name="keep_screen_on_charging">While charging</string>
+
     <!-- Contributors cloud activity -->
     <string name="contributors_cloud_fragment_title">Contributors</string>
     <string name="contributors_cloud_loading_message">Loading contributors data\u2026</string>
@@ -1399,10 +1404,4 @@
         <![CDATA[<b>Total contributors:</b> <xliff:g id="total_contributors">%1$s</xliff:g><br/><br/>
                  <b>Total commits:</b> <xliff:g id="total_commits">%2$s</xliff:g><br/><br/>
                  <b>Last update:</b> <xliff:g id="date">%3$s</xliff:g>]]></string>
-
-    <!-- Keep screen on strings -->
-    <string name="keep_screen_on_never">Never</string>
-    <string name="keep_screen_on_debugging">While USB debugging</string>
-    <string name="keep_screen_on_charging">While charging</string>
-
 </resources>
