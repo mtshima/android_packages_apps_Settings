@@ -813,7 +813,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 Settings.System.ENABLE_HW_KEYS, enabled ? 1 : 0);
 
         CMHardwareManager hardware = CMHardwareManager.getInstance(context);
-        hardware.set(CMHardwareManager.FEATURE_KEY_DISABLE, enabled);
+        hardware.set(CMHardwareManager.FEATURE_KEY_DISABLE, !enabled);
 
         /* Save/restore button timeouts to disable them in softkey mode */
         Editor editor = prefs.edit();
