@@ -73,11 +73,6 @@
             android:summary="@string/quick_settings_collapse_summary"
             android:defaultValue="false"/>
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="notification_drawer_clear_all_icon_color"
-            android:title="@string/notification_drawer_clear_all_icon_color_title"
-            android:defaultValue="0xffffffff" />
-
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
             android:key="qs_show_brightness_slider"
             android:title="@string/qs_brightness_slider_title"
