@@ -621,6 +621,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     Settings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
                     mWakeWhenPluggedOrUnplugged.isChecked() ? 1 : 0);
             return true;
+        } else if (preference == mAccelerometer) {
+            RotationPolicy.setRotationLockForAccessibility(getActivity(),
+                    !mAccelerometer.isChecked());
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
