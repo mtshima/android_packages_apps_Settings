@@ -73,6 +73,7 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
     private static final int DIALOG_APPS = 0;
 
     private boolean mBrightnessNotificationLed;
+    private boolean mMultiColorNotificationLed;
     private int mDefaultColor;
     private int mDefaultLedOn;
     private int mDefaultLedOff;
@@ -104,6 +105,9 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
 
         mBrightnessNotificationLed = resources.getBoolean(
                 com.android.internal.R.bool.config_brightnessNotificationLed);
+        mMultiColorNotificationLed = resources.getBoolean(
+                com.android.internal.R.bool.config_multiColorNotificationLed);
+
         // Get the system defined default notification color
         mDefaultColor =
                 resources.getColor(com.android.internal.R.color.config_defaultNotificationColor);
@@ -156,7 +160,15 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
         mPackageAdapter = new PackageListAdapter(getActivity());
 
         mPackages = new HashMap<String, Package>();
-        setHasOptionsMenu(true);
+
+        if (mMultiColorNotificationLed) {
+            setHasOptionsMenu(true);
+        } else {
+            mAdvancedPrefs.removePreference(mCustomEnabledPref);
+            prefSet.removePreference(mPhonePrefs);
+            prefSet.removePreference(mApplicationPrefList);
+            resetColors();
+        }
     }
 
     @Override
@@ -231,8 +243,10 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
             mVoicemailPref.setAllValues(vmailColor, vmailTimeOn, vmailTimeOff);
         }
 
-        mApplicationPrefList = (PreferenceGroup) findPreference("applications_list");
-        mApplicationPrefList.setOrderingAsAdded(false);
+        if (mMultiColorNotificationLed) {
+            mApplicationPrefList = (PreferenceGroup) findPreference("applications_list");
+            mApplicationPrefList.setOrderingAsAdded(false);
+        }
     }
 
     private void refreshCustomApplicationPrefs() {
@@ -363,6 +377,24 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
             app.timeoff = timeoff;
             savePackageList(true);
         }
+    }
+
+    protected void resetColors() {
+        ContentResolver resolver = getContentResolver();
+
+        // Reset to the framework default colors
+        Settings.System.putInt(resolver, NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR, mDefaultColor);
+        Settings.System.putInt(resolver, NOTIFICATION_LIGHT_PULSE_CALL_COLOR, mDefaultColor);
+        Settings.System.putInt(resolver, NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR, mDefaultColor);
+
+        // Reset to the framework default custom pulse length & speed
+        Settings.System.putInt(resolver, NOTIFICATION_LIGHT_PULSE_CALL_LED_ON, mDefaultLedOn);
+        Settings.System.putInt(resolver, NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF, mDefaultLedOff);
+
+        Settings.System.putInt(resolver, NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON, mDefaultLedOn);
+        Settings.System.putInt(resolver, NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF, mDefaultLedOff);
+
+        refreshDefault();
     }
 
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
