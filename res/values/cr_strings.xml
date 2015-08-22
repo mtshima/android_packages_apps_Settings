@@ -1139,4 +1139,8 @@
     <!-- QS Tiles Columns -->
     <string name="qs_num_columns_title">Number of tiles per row</string>
     <string name="qs_num_columns_showing">%1$s tiles per row showing</string>
+
+    <!-- Whether the keyguard will directly pass to gesture entry -->
+    <string name="lock_directly_show_gesture">Directly show gesture </string>
+
 </resources>
