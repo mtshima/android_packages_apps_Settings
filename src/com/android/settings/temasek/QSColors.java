@@ -54,7 +54,6 @@ public class QSColors extends SettingsPreferenceFragment implements
 
     private static final int DEFAULT_BACKGROUND_COLOR = 0xff263238;
     private static final int WHITE = 0xffffffff;
-    private static final int SWAG_TEAL = 0xfff700ff;
 
     private static final int DEFAULT_BG_COLOR = 0xff384248;
 
@@ -256,26 +255,6 @@ public class QSColors extends SettingsPreferenceFragment implements
                              Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_EXPANDED_HEADER_BG_COLOR,
                                     DEFAULT_BG_COLOR);
-                            getOwner().refreshSettings();
-                        }
-                    })
-                    .setPositiveButton(R.string.reset_swag,
-                        new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.QS_BACKGROUND_COLOR,
-                                    WHITE);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.QS_ICON_COLOR,
-                                    SWAG_TEAL);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.QS_TEXT_COLOR,
-                                    SWAG_TEAL);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.QS_TRANSPARENT_SHADE, 0);
-                            Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_BG_COLOR,
-                                    0xee263238);
                             getOwner().refreshSettings();
                         }
                     })
