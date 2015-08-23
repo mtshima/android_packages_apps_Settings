@@ -22,9 +22,9 @@
     <string name="enabled">Enabled</string>
     <string name="disabled">Disabled</string>
     <string name="ok">Ok</string>
-    <string name="reset_message">Reset all entries to default?</string>
+    <string name="reset_message">Reset all entries to the default?</string>
     <string name="extras_temasek_settings">Extras</string>
-    <string name="reset_default_message">Reset default</string>
+    <string name="reset_default_message">Reset to default</string>
     <string name="additional_options_title">Additional options</string>
 
     <!-- Changelog -->
