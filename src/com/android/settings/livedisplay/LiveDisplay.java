@@ -297,6 +297,10 @@ public class LiveDisplay extends SettingsPreferenceFragment implements
                 MODE_OFF, UserHandle.USER_CURRENT);
 
         int index = ArrayUtils.indexOf(mModeValues, String.valueOf(mode));
+        if (index < 0) {
+            index = ArrayUtils.indexOf(mModeValues, String.valueOf(MODE_OFF));
+        }
+
         mLiveDisplay.setSummary(mModeSummaries[index]);
 
         if (mDisplayTemperature != null) {
