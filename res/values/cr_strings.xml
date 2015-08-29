@@ -320,6 +320,9 @@
     <string name="toast_SlideLeftRight_animation">Slide left to right</string>
     <string name="toast_SlideRightLeft_animation">Slide right to left</string>
 
+    <!-- Toast Icons -->
+    <string name="toast_icon_title">Toast icon</string>
+
     <!-- ListView animation -->
     <string name="interface_settings_animation_title">Animation options</string>
     <string name="listview_animation_title">ListView animation</string>
@@ -1143,5 +1146,9 @@
     <!-- Time-context headers in notification header -->
     <string name="status_bar_custom_header_title">Custom header image</string>
     <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
+
+    <!-- Device policy override -->
+    <string name="device_policy_override_title">Device policy override</string>
+    <string name="device_policy_override_summary">Allow apps to force secure lock screen and override profile settings</string>
 
 </resources>
