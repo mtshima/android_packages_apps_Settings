@@ -872,7 +872,7 @@
         <item>@string/shortcut_action_power</item>
         <!--<item>@string/shortcut_action_assist</item>-->
         <!--<item>@string/shortcut_action_theme_switch</item>-->
-        <!--<item>@string/shortcut_action_torch</item>-->
+        <item>@string/shortcut_action_torch</item>
         <item>@string/shortcut_action_screenshot</item>
     </string-array>
 
@@ -892,7 +892,7 @@
         <item>**power**</item>
         <!--<item>**assist**</item>-->
         <!--<item>**theme_switch**</item>-->
-        <!--<item>**torch**</item>-->
+        <item>**torch**</item>
         <item>**screenshot**</item>
     </string-array>		
 
