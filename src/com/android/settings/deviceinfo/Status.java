@@ -415,7 +415,7 @@ public class Status extends PreferenceActivity {
                     Preference pref = (Preference) listAdapter.getItem(position);
 
                     CharSequence summary = pref.getSummary();
-                    if (summary != null && summary.length() != 0) {
+                    if (!TextUtils.isEmpty(summary)) {
                         ClipboardManager cm = (ClipboardManager)
                                 getSystemService(Context.CLIPBOARD_SERVICE);
                         cm.setText(summary);
@@ -423,8 +423,9 @@ public class Status extends PreferenceActivity {
                                 Status.this,
                                 com.android.internal.R.string.text_copied,
                                 Toast.LENGTH_SHORT).show();
+                        return true;
                     }
-                    return true;
+                    return false;
                 }
             });
 
