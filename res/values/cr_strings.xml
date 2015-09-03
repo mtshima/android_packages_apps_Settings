@@ -5,7 +5,7 @@
     <!-- About phone screen, Temasek version -->
     <string name="temasek_version_title">Temasek unofficial version</string>
     <!-- Do NOT translate this -->
-    <string name="temasek_version_default">v16.3</string>
+    <string name="temasek_version_default">v16.4</string>
 
     <!-- temasek spare parts -->
     <string name="temasek_settings_title">Spare parts</string>
@@ -832,6 +832,7 @@
     <string name="clock_font_light">Light</string>
     <string name="clock_font_light_italic">Light Italic</string>
     <string name="clock_font_normal">Normal</string>
+    <string name="clock_font_size_title">Font size</string>
     <string name="status_bar_show_clock_second_title">Clock seconds</string>
 
     <!-- Pie control -->
