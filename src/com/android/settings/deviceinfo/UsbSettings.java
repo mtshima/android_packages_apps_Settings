@@ -31,7 +31,6 @@ import android.os.SystemProperties;
 import android.os.storage.StorageEventListener;
 import android.os.storage.StorageManager;
 import android.os.storage.StorageVolume;
-import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
@@ -66,6 +65,7 @@ public class UsbSettings extends SettingsPreferenceFragment {
     private UsbManager mUsbManager;
     private StorageManager mStorageManager;
     private UserManager mUserManager;
+
     private SwitchPreference mMtp;
     private SwitchPreference mPtp;
     private SwitchPreference mCharging;
