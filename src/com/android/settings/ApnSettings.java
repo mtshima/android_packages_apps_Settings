@@ -240,6 +240,10 @@ public class ApnSettings extends SettingsPreferenceFragment implements
 
             ArrayList<Preference> mmsApnList = new ArrayList<Preference>();
 
+            ArrayList<ApnInfo> mvnoSpnList = new ArrayList<ApnInfo>();
+            ArrayList<ApnInfo> mvnoGid1List = new ArrayList<ApnInfo>();
+            ArrayList<ApnInfo> mvnoImsiList = new ArrayList<ApnInfo>();
+
             mSelectedKey = getSelectedApnKey();
             while (cursor.moveToNext()) {
                 String name = cursor.getString(NAME_INDEX);
@@ -251,24 +255,24 @@ public class ApnSettings extends SettingsPreferenceFragment implements
                 String mvnoData = cursor.getString(MVNODATA_INDEX);
                 boolean isMvno = !TextUtils.isEmpty(mvnoType) && !TextUtils.isEmpty(mvnoData);
 
-                if (isMvno &&
-                  (!mvnoMatches(mvnoType, mvnoData, simOperatorName, imsiSIM, gid1))) {
-                    Log.d(TAG, "Skipping non-matching MVNO: " + name);
+                if (isMvno) {
+                    if (!mvnoMatches(mvnoType, mvnoData, simOperatorName, imsiSIM, gid1)) {
+                    } else {
+                        ApnInfo apnInfo = new ApnInfo(name, apn, key, type, mvnoType, readOnly);
+                        if ("sbn".equals(mvnoType)) {
+                            mvnoSpnList.add(apnInfo);
+                        } else if ("gid".equals(mvnoType)) {
+                            mvnoGid1List.add(apnInfo);
+                        } else if ("imsi".equals(mvnoType)) {
+                            mvnoImsiList.add(apnInfo);
+                        }
+                    }
                     continue;
                 }
 
-                ApnPreference pref = new ApnPreference(getActivity());
+                ApnPreference pref = createApnPreference(name, key, apn, type, readOnly);
 
-                pref.setApnReadOnly(readOnly);
-                pref.setKey(key);
-                pref.setTitle(name);
-                pref.setSummary(apn);
-                pref.setPersistent(false);
-                pref.setOnPreferenceChangeListener(this);
-
-                boolean selectable = ((type == null) || !type.equals("mms"));
-                pref.setSelectable(selectable);
-                if (selectable) {
+                if (pref.getSelectable()) {
                     if ((mSelectedKey != null) && mSelectedKey.equals(key)) {
                         pref.setChecked();
                         Log.d(TAG, "find select key = " + mSelectedKey);
@@ -280,10 +284,49 @@ public class ApnSettings extends SettingsPreferenceFragment implements
             }
             cursor.close();
 
+            ArrayList<ApnInfo> mvnoList = null;
+            if (mvnoImsiList.size() > 0) {
+                mvnoList = mvnoImsiList;
+            } else if (mvnoGid1List.size() > 0) {
+                mvnoList = mvnoGid1List;
+            } else if (mvnoSpnList.size() > 0) {
+                mvnoList = mvnoSpnList;
+            }
+            if (mvnoList != null) {
+                for (ApnInfo apnInfo : mvnoList) {
+                    ApnPreference pref = createApnPreference(apnInfo.name, apnInfo.key, apnInfo.apn,
+                            apnInfo.type, apnInfo.readOnly);
+                    if (apnInfo.selectable) {
+                        if ((mSelectedKey != null) && mSelectedKey.equals(apnInfo.key)) {
+                            pref.setChecked();
+                            Log.d(TAG, "find select key = " + mSelectedKey);
+                        }
+                        apnList.addPreference(pref);
+                    } else {
+                        mmsApnList.add(pref);
+                    }
+                }
+            }
+
             for (Preference preference : mmsApnList) {
                 apnList.addPreference(preference);
             }
         }
+    }
+
+    private ApnPreference createApnPreference(String name, String key,
+            String apn, String type, boolean readOnly) {
+        ApnPreference pref = new ApnPreference(getActivity());
+
+        pref.setApnReadOnly(readOnly);
+        pref.setKey(key);
+        pref.setTitle(name);
+        pref.setSummary(apn);
+        pref.setPersistent(false);
+        pref.setOnPreferenceChangeListener(this);
+
+        pref.setSelectable(((type == null) || !type.equals("mms")));
+        return pref;
     }
 
     private static boolean imsiMatches(String imsiDB, String imsiSIM) {
@@ -470,6 +513,26 @@ public class ApnSettings extends SettingsPreferenceFragment implements
                         .sendEmptyMessage(EVENT_RESTORE_DEFAULTAPN_COMPLETE);
                     break;
             }
+        }
+    }
+
+    private class ApnInfo {
+        String name;
+        String apn;
+        String key;
+        String type;
+        String mvnoType;
+        boolean readOnly;
+        boolean selectable;
+
+        public ApnInfo(String name, String apn, String key, String type, String mvnoType,
+                boolean readOnly) {
+            this.name = name;
+            this.apn = apn;
+            this.key = key;
+            this.mvnoType = mvnoType;
+            this.readOnly = readOnly;
+            this.selectable = ((type == null) || !type.equals("mms"));
         }
     }
 
