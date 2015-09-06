@@ -18,9 +18,9 @@
 
 	<!-- Heads up notifications -->
     <Preference
-         android:key="heads_up_enabled"
-         android:fragment="com.android.settings.temasek.HeadsUpSettings"
-         android:title="@string/category_heads_up" />
+            android:key="heads_up_enabled"
+            android:fragment="com.android.settings.temasek.HeadsUpSettings"
+            android:title="@string/category_heads_up" />
 
     <!-- Zen Mode -->
     <PreferenceScreen

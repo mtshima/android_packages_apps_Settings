@@ -19,6 +19,7 @@ package com.android.settings.deviceinfo;
 import android.app.ActionBar;
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
+import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
@@ -418,7 +419,7 @@ public class Status extends PreferenceActivity {
                     if (!TextUtils.isEmpty(summary)) {
                         ClipboardManager cm = (ClipboardManager)
                                 getSystemService(Context.CLIPBOARD_SERVICE);
-                        cm.setText(summary);
+                        cm.setPrimaryClip(ClipData.newPlainText(pref.getTitle(), summary));
                         Toast.makeText(
                                 Status.this,
                                 com.android.internal.R.string.text_copied,

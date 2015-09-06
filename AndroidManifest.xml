@@ -1878,6 +1878,7 @@
         />
 
         <!-- Custom activities Start -->
+        <!-- Heads Up -->
         <activity android:name="Settings$HeadsUpSettingsActivity"
                 android:uiOptions="splitActionBarWhenNarrow"
                 android:label="@string/category_heads_up"
@@ -1889,7 +1890,7 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.temasek.HeadsUpSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/security_settings" />
+                android:resource="@id/notification_manager" />
         </activity>
 
         <activity-alias android:name=".temasek.HeadsUpSettings"
@@ -1901,8 +1902,11 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                        android:value="com.android.settings.temasek.HeadsUpSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                       android:resource="@id/security_settings" />
+                       android:resource="@id/notification_manager" />
         </activity-alias>
+
+        <!-- SystemApp Remover -->
+        <activity android:name="com.android.settings.temasek.fragments.SystemappRemover" />
 
         <!-- Navigation bar toggle -->
         <activity android:name="Settings$ButtonSettingsActivity"
