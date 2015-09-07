@@ -19,13 +19,11 @@ package com.android.settings.deviceinfo;
 import android.app.ActionBar;
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
-import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
@@ -47,10 +45,6 @@ import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.text.TextUtils;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListAdapter;
-import android.widget.Toast;
 
 import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.PhoneConstants;
@@ -58,6 +52,7 @@ import com.android.internal.telephony.PhoneFactory;
 import com.android.internal.telephony.PhoneStateIntentReceiver;
 import com.android.internal.telephony.SubscriptionController;
 import com.android.internal.util.ArrayUtils;
+import com.android.settings.CopyOnItemLongClickListener;
 import com.android.settings.R;
 import com.android.settings.Utils;
 
@@ -404,27 +399,6 @@ public class Status extends PreferenceActivity {
             removePreferenceFromScreen(KEY_IMEI_INFO);
         }
 
-        // Make every pref on this screen copy its data to the clipboard on longpress.
-        // Super convenient for capturing the IMEI, MAC addr, serial, etc.
-        getListView().setOnItemLongClickListener(
-            new AdapterView.OnItemLongClickListener() {
-                @Override
-                public boolean onItemLongClick(AdapterView<?> parent, View view,
-                        int position, long id) {
-                    ListAdapter listAdapter = (ListAdapter) parent.getAdapter();
-                    Preference pref = (Preference) listAdapter.getItem(position);
-
-                    ClipboardManager cm = (ClipboardManager)
-                            getSystemService(Context.CLIPBOARD_SERVICE);
-                    cm.setText(pref.getSummary());
-                    Toast.makeText(
-                        Status.this,
-                        com.android.internal.R.string.text_copied,
-                        Toast.LENGTH_SHORT).show();
-                    return true;
-                }
-            });
-
         Preference subs = findPreference(BUTTON_SUBSCRIPTIONS_KEY);
         if (subs != null) {
             PreferenceScreen prefSet = getPreferenceScreen();
@@ -452,6 +426,10 @@ public class Status extends PreferenceActivity {
             }
             prefSet.removePreference(subs);
         }
+
+        // Make every pref on this screen copy its data to the clipboard on longpress.
+        // Super convenient for capturing the IMEI, MAC addr, serial, etc.
+        getListView().setOnItemLongClickListener(new CopyOnItemLongClickListener());
     }
 
     @Override
