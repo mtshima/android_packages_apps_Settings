@@ -21,7 +21,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.ContentUris;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -32,10 +31,11 @@ import android.provider.ContactsContract.CommonDataKinds;
 import android.provider.Telephony.Blacklist;
 import android.telephony.PhoneNumberUtils;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.method.ArrowKeyMovementMethod;
 import android.text.method.DialerKeyListener;
-import android.util.Log;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -227,8 +227,24 @@ public class EntryEditDialogFragment extends DialogFragment
             }
         }
 
+        boolean validInput = false;
+        String input = mEditText.getText().toString();
+        if (!TextUtils.isEmpty(input)) {
+            Pair<String, Boolean> normalizeResult =
+                    BlacklistUtils.isValidBlacklistInput(getActivity(), input);
+            if (normalizeResult.second) {
+                validInput = true;
+            }
+        }
+
+        if (!validInput && !TextUtils.isEmpty(input)) {
+            mEditText.setError(getString(R.string.wifi_error));
+        } else {
+            mEditText.setError(null);
+        }
+
         if (mOkButton != null) {
-            mOkButton.setEnabled(mEditText.getText().length() != 0);
+            mOkButton.setEnabled(validInput);
         }
     }
 
